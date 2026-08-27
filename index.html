@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>YURI DRAGHETTI TIGGEMANN</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        html{
+            background-color: beige;    
+            font-family: "Saira", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        header{
+            width: 500px;
+            text-align: center;
+            color: tomato;
+            background-color: rgb(226, 226, 184);
+            margin: 0 auto;
+            
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+            border: solid black 5px;
+            border-radius: 20px;
+        }
+        h2{
+            color: crimson;
+        }
+
+        footer{
+            text-align: center;
+            margin: 10px auto;
+            padding:45px;
+        }
+
+        :link:hover {
+            outline: double;
+        }
+        .lista{
+            color:indianred;
+        }
+        .btn{
+            display: block;
+            margin: 15px auto;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!--Nome-->
+        <h1>YURI DRAGHETTI TIGGEMANN</h1>
+    </header>
+    <main>
+        <img src="https://m.media-amazon.com/images/M/MV5BOWUzNzIzMzQtNzMxYi00OWRiLTlhZjEtZTRjYWVkYzI4ZjMwXkEyXkFqcGc@._V1_.jpg" alt="The Rock" width="500" height="200">
+        <button class="btn">Trocar cor da Borda</button>
+        <h2>Curso: </h2>
+            <h3>Curso Técnico de informática</h3> <hr>
+        <h2>Cidade: </h2>
+            <h3>Teutônia - RS</h3> <hr>
+        <h2>Interesses: </h2>
+            <p>Gosto de praticar esportes, como futebol ou academia. <br>
+            Gosto de tecnologia, estou estudando programação. <br>
+            Sou <mark>Colorado</mark></p>
+        <hr>
+        <h2>Habilidades: </h2>
+            <ul class="lista">
+                <li>Aptidão com Matemática</li>
+                <li>Conhecimento <strong>Básico</strong> de Programação (python/html)</li>
+                <li>Facilidade com problemas de Lógica </li>
+            </ul><hr>
+        <h2>Rede Social: </h2>
+            <h3><a href="https://www.instagram.com/ydtiggemann/" target="_blank">Instagram<a></h3>
+    </main>
+    <footer>
+        <p>Site show do Yuri</p>
+    </footer>
+
+
+    <script>
+        let nome_usuario = 'Yuri Draghetti Tiggemann' 
+        let idade_usuario = 17
+
+        function verificar_idade(idade) {
+            if (idade < 18) {
+                console.log('Você é menor de idade')
+            } else {
+                console.log('Você é maior de idade')
+            }            
+        }
+
+        verificar_idade(idade_usuario);
+        
+        const botao = document.querySelector('.btn');
+        
+        botao.addEventListener("click", () => {
+            let imagem = document.querySelector('img');
+            let coratual = imagem.style.borderColor;
+            if (coratual === 'black') {
+                imagem.style.borderColor = 'red';
+            } else {
+                imagem.style.borderColor = 'black';
+            }            
+        });
+
+
+    </script>
+</body>
+</html>
