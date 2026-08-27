@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html>
+<head>
+    <button id="btn">Não clique aqui</button>
+    <script>
+        const nome = 'Yuri'
+        let idade = 17
+        let cursando = true
+        idade ++    
+        console.log(idade === '18')
+
+        console.log(`Meu nome é ${nome} e tenho ${idade} anos`)
+
+        if (cursando === true) {
+            console.log('Está cursando técnico')
+        } else {
+            console.log('Não está cursando técnico')
+        }
+
+        colegas = ['Yuri', 'Davi', 'Enzo Gabrielkkkkk', 'Gabriel', 'Matheusinho']
+        for (i=0; i < colegas.length; i++) {
+            console.log(`Olá ${colegas[i]}`)
+        }
+
+        function saudar(nome){
+            console.log(`Olá ${nome}!`)
+        }
+        saudar('Joelson')
+
+        const botao = document.querySelector("#btn");
+        botao.addEventListener("click", () => {
+        console.log("Clicou!");
+        });
+    </script>
+</head>
+<body>
+    
+</body>
