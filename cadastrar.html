@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CADASTRO DE CLIENTES</h1>
+    </header>
+    <main>
+        <nav>
+            <a href="listar.html">LISTAR</a>
+            <a href="cadastrar.html">CADASTRAR</a>
+            <a href="editar.html">EDITAR</a>
+            <a href="excluir.html">EXCLUIR</a>
+        </nav>
+
+        <div id="conteudo">
+    
+                <label>ID</label>
+                <input id="id" name="id" type="number" min="1" max="99" placeholder="ID">
+                <br>
+                <label>Nome</label>
+                <input id="nome" name="nome" type="text" placeholder="Nome Completo">
+                <br>
+                <label>Telefone</label>
+                <input id="telefone" name="telefone" type="tel" placeholder="(xx) xxxxx-xxxx">
+                <br>
+                <label>Email</label>
+                <input id="email" name="email" type="email" placeholder="exemplo@email.com">
+                <br>
+                <input type="submit" onclick="cadastrar()">   
+            
+        </div>
+        
+    </main>
+    <script>
+
+        const url = "https://infosulst.com.br/univates/web/cliente/"
+        const token = "Bearer meu-token-secreto-123"
+
+        async function cadastrar(){
+            
+
+            const cliente = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                telefone: document.getElementById('telefone').value
+            }
+
+            const resposta = await fetch(
+                url, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': token
+                    },
+                    body: JSON.stringify(cliente)
+                }
+            )
+
+            
+        }
+
+        
+    </script>
+</body>

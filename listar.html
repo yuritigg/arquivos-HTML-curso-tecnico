@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar</title>
+
+    
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>CADASTRO DE CLIENTES</h1>
+    </header>
+    <main>
+        <nav>
+            <a href="listar.html">LISTAR</a>
+            <a href="cadastrar.html">CADASTRAR</a>
+            <a href="editar.html">EDITAR</a>
+            <a href="excluir.html">EXCLUIR</a>
+        </nav>
+
+        <div id="conteudo">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                </tr>
+                <tbody id="clientes"></tbody>
+                <tr>
+                    <td>01</td>
+                    <td>Yuri Tiggemann</td>
+                    <td>51 999626981</td>
+                    <td>yuri.tiggemann09@gmail.com</td>
+                </tr>
+            </table>
+        </div>
+        
+        
+    </main>
+    <script>
+
+        const url = "https://infosulst.com.br/univates/web/cliente/"
+        const token = "Bearer meu-token-secreto-123"
+
+        async function buscar(){
+
+            const resposta = await fetch(
+                url, {
+                    headers: {
+                        'Authorization': token
+                    }
+                }
+            )
+            const clientes = await resposta.json();
+            console.log(clientes);
+            let linhas = ''
+
+            for(const cliente of clientes){
+                linhas += '<tr>' +
+                            '<td>' + cliente.id + '</td>' +
+                            '<td>' + cliente.nome + '</td>' +
+                            '<td>' + cliente.nome + '</td>' +
+                            '<td>' + cliente.email + '</td>' +
+                          '</tr>'  
+            }
+            document.getElementById('clientes').innerHTML = linhas
+            console.log(linhas)
+        }
+
+        buscar()
+        
+    </script>
+</body>
